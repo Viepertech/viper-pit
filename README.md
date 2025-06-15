@@ -2,6 +2,8 @@
 
 A real-time animated snake pit built with HTML5 Canvas and JavaScript. Each snake moves with chaotic patterns and has a custom monster head (`snakehead.png`) at the front.
 
+Check out the Live Demo: [https://viepertech.github.io/viper-pit/](https://viepertech.github.io/viper-pit/)
+
 ## Features
 
 - Animated multi-snake movement
