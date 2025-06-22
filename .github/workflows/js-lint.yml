@@ -1,0 +1,23 @@
+name: Lint JavaScript
+
+on:
+  push:
+    paths: ["**/*.js"]
+  pull_request:
+    paths: ["**/*.js"]
+
+jobs:
+  lint-js:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install ESLint
+        run: |
+          npm init -y
+          npm install eslint --save-dev
+          npx eslint --init  # optional: or drop in your config manually
+
+      - name: Run ESLint
+        run: |
+          npx eslint . --ext .js || exit 1
