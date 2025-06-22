@@ -42,8 +42,11 @@ jobs:
           set -e
           echo "Preparing to commit SBOM..."
           git add sbom/sbom.json
+
           if git diff --cached --quiet; then
-            echo "No changes to commit."
+            echo "✅ No changes to commit."
           else
             git commit -m "chore: update SBOM [auto]"
             git push https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }} HEAD:main
+          fi
+
