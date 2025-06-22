@@ -39,6 +39,10 @@ viper-pit/
 
 MIT License. Go wild, remix it, and make your own pit of horrors or beauty.
 
-## SBOM
+## Github Actions
 [![SBOM Status](https://img.shields.io/badge/SBOM-Generated-brightgreen)](https://github.com/Viepertech/viper-pit/actions)
+![SBOM](https://github.com/Viepertech/viper-pit/actions/workflows/sbom.yml/badge.svg)
+![Markdown Lint](https://github.com/Viepertech/viper-pit/actions/workflows/lint-markdown.yml/badge.svg)
+![JS Lint](https://github.com/Viepertech/viper-pit/actions/workflows/lint-js.yml/badge.svg)
+![HTML CSS Lint](https://github.com/Viepertech/viper-pit/actions/workflows/lint-html-css.yml/badge.svg)
    
