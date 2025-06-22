@@ -17,15 +17,21 @@ jobs:
 
       - name: Set up Git config
         run: |
+          set -e
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-      - name: Install Syft (SBOM Generator)
+      - name: Install Syft
         run: |
+          set -e
+          echo "Installing Syft..."
           curl -sSfL https://raw.githubusercontent.com/anchore/syft/main/install.sh | sh -s -- -b /usr/local/bin
+          syft version
 
       - name: Generate SBOM
         run: |
+          set -e
+          echo "Generating SBOM in CycloneDX format..."
           mkdir -p sbom
           syft dir:. -o cyclonedx-json > sbom/sbom.json
 
@@ -33,9 +39,11 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          set -e
+          echo "Preparing to commit SBOM..."
           git add sbom/sbom.json
           if git diff --cached --quiet; then
-            echo "No SBOM changes to commit."
+            echo "No changes to commit."
           else
             git commit -m "chore: update SBOM [auto]"
             git push https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }} HEAD:main
