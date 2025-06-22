@@ -38,4 +38,7 @@ viper-pit/
 ## License
 
 MIT License. Go wild, remix it, and make your own pit of horrors or beauty.
+
+## SBOM
+[![SBOM Status](https://img.shields.io/badge/SBOM-Generated-brightgreen)](https://github.com/Viepertech/viper-pit/actions)
    
