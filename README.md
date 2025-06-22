@@ -12,6 +12,30 @@ Check out the Live Demo: [https://viepertech.github.io/viper-pit/](https://viepe
 - Responsive full-screen canvas
 - No libraries or frameworks
 
+## How to Run Locally
+Clone the repository and open the index.html in your browser:
 
+```
+git clone https://github.com/Viepertech/viper-pit.git
+cd viper-pit
+```
 
+Then just open `index.html` in your favorite browser.
+
+Make sure snakehead.png is in the same directory as your script.js. Or add your own custom snakehead.png file
+
+## File Structure
+
+```
+viper-pit/
+├── index.html        # HTML structure and canvas element
+├── script.js         # Core animation logic for snakes
+├── style.css         # Fullscreen canvas styling
+├── snakehead.png     # Image for snake heads
+└── README.md         # You're reading this!
+```
+
+## License
+
+MIT License. Go wild, remix it, and make your own pit of horrors or beauty.
    
