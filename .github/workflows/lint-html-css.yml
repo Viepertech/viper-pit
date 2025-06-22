@@ -1,0 +1,28 @@
+name: Lint HTML & CSS
+
+on:
+  push:
+    paths: ["**/*.html", "**/*.css"]
+  pull_request:
+    paths: ["**/*.html", "**/*.css"]
+
+jobs:
+  lint-html-css:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install linters
+        run: |
+          npm init -y
+          npm install htmlhint stylelint stylelint-config-standard --save-dev
+          echo '{}' > .htmlhintrc
+          echo '{
+            "extends": "stylelint-config-standard"
+          }' > .stylelintrc.json
+
+      - name: Lint HTML
+        run: npx htmlhint "**/*.html"
+
+      - name: Lint CSS
+        run: npx stylelint "**/*.css"
