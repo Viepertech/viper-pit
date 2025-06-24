@@ -1,19 +1,26 @@
-name: Lint JavaScript
+name: SBOM + Lint
 
 on:
   push:
+    branches: [ main ]
     paths:
       - "**/*.js"
+      - "**/*.json"
+      - "**/*.md"
+      - "**/*.yml"
   pull_request:
     paths:
       - "**/*.js"
+      - "**/*.json"
+      - "**/*.md"
+      - "**/*.yml"
 
 jobs:
-  lint-js:
+  sbom-and-lint:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout repo
         uses: actions/checkout@v4
 
       - name: Set up Node.js
@@ -21,7 +28,7 @@ jobs:
         with:
           node-version: 20
 
-      - name: Install dependencies
+      - name: Install ESLint
         run: |
           npm install eslint --no-save
 
@@ -44,4 +51,27 @@ jobs:
 
       - name: Run ESLint
         run: |
+          echo "Running ESLint..."
           npx eslint . --ext .js
+
+      - name: Install Syft
+        run: |
+          curl -sSfL https://raw.githubusercontent.com/anchore/syft/main/install.sh | sh -s -- -b /usr/local/bin
+
+      - name: Generate SBOM
+        run: |
+          mkdir -p sbom
+          syft dir:. -o cyclonedx-json > sbom/sbom.json
+
+      - name: Commit and Push SBOM
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git add sbom/sbom.json
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git config --global user.name "github-actions[bot]"
+            git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -m "chore: update SBOM [auto]"
+            git push https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }} HEAD:main
