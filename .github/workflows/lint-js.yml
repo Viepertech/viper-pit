@@ -21,15 +21,16 @@ jobs:
         with:
           node-version: 20
 
-      - name: Install ESLint (v9+)
+      - name: Install ESLint
         run: |
           npm install eslint --no-save
 
-      - name: Create ESLint config (v9+ compatible)
+      - name: Create ESLint config (v9+)
         run: |
           echo 'export default [
             {
               files: ["**/*.js"],
+              ignores: ["sbom/**", "node_modules/**"],
               languageOptions: {
                 ecmaVersion: 2021,
                 sourceType: "module"
