@@ -1,26 +1,19 @@
-name: SBOM + Lint
+name: Lint JavaScript
 
 on:
   push:
-    branches: [ main ]
     paths:
       - "**/*.js"
-      - "**/*.json"
-      - "**/*.md"
-      - "**/*.yml"
   pull_request:
     paths:
       - "**/*.js"
-      - "**/*.json"
-      - "**/*.md"
-      - "**/*.yml"
 
 jobs:
-  sbom-and-lint:
+  lint-js:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
+      - name: Checkout code
         uses: actions/checkout@v4
 
       - name: Set up Node.js
@@ -28,50 +21,29 @@ jobs:
         with:
           node-version: 20
 
-      - name: Install ESLint
+      - name: Install ESLint (v9+)
         run: |
           npm install eslint --no-save
 
-      - name: Create default ESLint config if missing
+      - name: Create ESLint config (v9+ compatible)
         run: |
-          if [ ! -f .eslintrc.json ]; then
-            echo '{
-              "env": {
-                "browser": true,
-                "es2021": true
+          echo 'export default [
+            {
+              files: ["**/*.js"],
+              languageOptions: {
+                ecmaVersion: 2021,
+                sourceType: "module"
               },
-              "extends": "eslint:recommended",
-              "parserOptions": {
-                "ecmaVersion": "latest",
-                "sourceType": "module"
-              },
-              "rules": {}
-            }' > .eslintrc.json
-          fi
+              rules: {
+                "no-unused-vars": "warn",
+                "no-console": "off",
+                "semi": ["error", "always"],
+                "quotes": ["error", "double"]
+              }
+            }
+          ];' > eslint.config.js
 
       - name: Run ESLint
         run: |
           echo "Running ESLint..."
-          npx eslint . --ext .js
-
-      - name: Install Syft
-        run: |
-          curl -sSfL https://raw.githubusercontent.com/anchore/syft/main/install.sh | sh -s -- -b /usr/local/bin
-
-      - name: Generate SBOM
-        run: |
-          mkdir -p sbom
-          syft dir:. -o cyclonedx-json > sbom/sbom.json
-
-      - name: Commit and Push SBOM
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          git add sbom/sbom.json
-          if git diff --cached --quiet; then
-            echo "No changes to commit."
-          else
-            git config --global user.name "github-actions[bot]"
-            git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git commit -m "chore: update SBOM [auto]"
-            git push https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }} HEAD:main
+          npx eslint .
