@@ -24,7 +24,8 @@ cd viper-pit
 ```
 
 Then just open `index.html` in your favorite browser.
-Make sure `snakehead.png` is in the same directory as your `script.js`. Or add your own custom `snakehead.png` file
+Make sure `snakehead.png` is in the same directory as your `script.js`.
+Or add your own custom `snakehead.png` file
 
 ## File Structure
 
