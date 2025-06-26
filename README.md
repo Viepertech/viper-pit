@@ -48,11 +48,11 @@ MIT License. Go wild, remix it, and make your own pit of horrors or beauty.
 - ![Markdown Lint](https://github.com/Viepertech/viper-pit/actions/workflows/lint-markdown.yml/badge.svg)
 - ![JS Lint](https://github.com/Viepertech/viper-pit/actions/workflows/lint-js.yml/badge.svg)
 - ![HTML CSS Lint](https://github.com/Viepertech/viper-pit/actions/workflows/lint-html-css.yml/badge.svg)
-   
+  
 ## Fix Summary
 
-| Error                             | Fix Applied                                                                 |
-|----------------------------------|------------------------------------------------------------------------------|
+| Error                            | Fix Applied                                                                 |
+|----------------------------------|-----------------------------------------------------------------------------|
 | `MD013/line-length`              | Broke long lines or used two-space line breaks at 80 columns                |
 | `MD022/blanks-around-headings`   | Ensured blank lines around all headings                                     |
 | `MD040/fenced-code-language`     | Added `bash` and `text` to fenced code blocks                               |
