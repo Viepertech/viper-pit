@@ -40,8 +40,8 @@ viper-pit/
 
 ## License
 
-MIT License. Go wild, remix it, and make your own pit of horrors or beauty.
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![MIT License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+Go wild, remix it, and make your own pit of horrors or beauty.
 
 ## Github Actions
 
