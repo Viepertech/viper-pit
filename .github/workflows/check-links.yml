@@ -1,0 +1,19 @@
+name: Check Markdown Links
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  check-links:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run link checker on Markdown files
+        uses: lycheeverse/lychee-action@v1.8.0
+        with:
+          args: --verbose --no-progress './**/*.md'
