@@ -2,11 +2,9 @@ name: Lint JavaScript
 
 on:
   push:
-    paths:
-      - "**/*.js"
+    branches: [main]
   pull_request:
-    paths:
-      - "**/*.js"
+    branches: [main]
 
 jobs:
   lint-js:
@@ -22,15 +20,14 @@ jobs:
           node-version: 20
 
       - name: Install ESLint
-        run: |
-          npm install eslint --no-save
+        run: npm install eslint@9 --no-save
 
-      - name: Create ESLint config (v9+)
+      - name: Create ESLint config
         run: |
-          echo 'export default [
+          echo 'module.exports = [
             {
               files: ["**/*.js"],
-              ignores: ["sbom/**", "node_modules/**"],
+              ignores: ["node_modules/**", "sbom/**"],
               languageOptions: {
                 ecmaVersion: 2021,
                 sourceType: "module"
@@ -42,9 +39,9 @@ jobs:
                 "quotes": ["error", "double"]
               }
             }
-          ];' > eslint.config.js
+          ];' > eslint.config.cjs
 
       - name: Run ESLint
         run: |
           echo "Running ESLint..."
-          npx eslint .
+          npx eslint . --config eslint.config.cjs
