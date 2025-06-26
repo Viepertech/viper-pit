@@ -2,9 +2,9 @@ name: Lint HTML & CSS
 
 on:
   push:
-    paths: ["**/*.html", "**/*.css"]
+    branches: [main]
   pull_request:
-    paths: ["**/*.html", "**/*.css"]
+    branches: [main]
 
 jobs:
   lint-html-css:
