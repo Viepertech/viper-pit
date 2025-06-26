@@ -49,13 +49,3 @@ MIT License. Go wild, remix it, and make your own pit of horrors or beauty.
 - ![JS Lint](https://github.com/Viepertech/viper-pit/actions/workflows/lint-js.yml/badge.svg)
 - ![HTML CSS Lint](https://github.com/Viepertech/viper-pit/actions/workflows/lint-html-css.yml/badge.svg)
   
-## Fix Summary
-
-| Error                            | Fix Applied                                                                 |
-|----------------------------------|-----------------------------------------------------------------------------|
-| `MD013/line-length`              | Broke long lines or used two-space line breaks at 80 columns                |
-| `MD022/blanks-around-headings`   | Ensured blank lines around all headings                                     |
-| `MD040/fenced-code-language`     | Added `bash` and `text` to fenced code blocks                               |
-| `MD032/blanks-around-lists`      | Added a blank line before the GitHub Actions badge list                     |
-| `MD009/no-trailing-spaces`       | Removed extra trailing spaces                                               |
-| `MD012/no-multiple-blanks`       | Removed consecutive blank lines   
