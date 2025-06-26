@@ -33,7 +33,7 @@ jobs:
           set -e
           echo "Generating SBOM in CycloneDX format..."
           mkdir -p sbom
-          syft dir:. -o cyclonedx-json > sbom/sbom.json
+          syft dir:. -o cyclonedx-json | jq '.' > sbom/sbom.json
 
       - name: Commit and Push SBOM
         env:
