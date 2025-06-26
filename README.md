@@ -49,3 +49,4 @@ MIT License. Go wild, remix it, and make your own pit of horrors or beauty.
 - ![JS Lint](https://github.com/Viepertech/viper-pit/actions/workflows/lint-js.yml/badge.svg)
 - ![HTML CSS Lint](https://github.com/Viepertech/viper-pit/actions/workflows/lint-html-css.yml/badge.svg)
 - ![Link Checker](https://github.com/Viepertech/viper-pit/actions/workflows/check-links.yml/badge.svg)
+- ![Dependency Audit](https://github.com/Viepertech/viper-pit/actions/workflows/dependency-audit.yml/badge.svg)
