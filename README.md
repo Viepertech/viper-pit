@@ -51,3 +51,9 @@ viper-pit/
 - ![Link Checker](https://github.com/Viepertech/viper-pit/actions/workflows/check-links.yml/badge.svg)
 - ![Dependency Audit](https://github.com/Viepertech/viper-pit/actions/workflows/dependency-audit.yml/badge.svg)
 - ![Vulnerability Scan](https://github.com/Viepertech/viper-pit/actions/workflows/vulnerability-scan.yml/badge.svg)
+
+## DevSecOps Highlights
+- CI/CD with GitHub Actions (tests and scans run on every push)  
+- Automated SBOM generation for supply chain visibility  
+- Dependency & vulnerability scanning for secure builds  
+- Linting and code quality checks across multiple languages  
