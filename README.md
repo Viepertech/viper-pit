@@ -53,6 +53,7 @@ viper-pit/
 - ![Vulnerability Scan](https://github.com/Viepertech/viper-pit/actions/workflows/vulnerability-scan.yml/badge.svg)
 
 ## DevSecOps Highlights
+
 - CI/CD with GitHub Actions (tests and scans run on every push)  
 - Automated SBOM generation for supply chain visibility  
 - Dependency & vulnerability scanning for secure builds  
