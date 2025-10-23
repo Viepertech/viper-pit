@@ -2,17 +2,17 @@
   "$schema": "http://cyclonedx.org/schema/bom-1.6.schema.json",
   "bomFormat": "CycloneDX",
   "specVersion": "1.6",
-  "serialNumber": "urn:uuid:1f59a3fa-3233-4738-bd4c-f37738595b2c",
+  "serialNumber": "urn:uuid:95e69bb1-f4c6-4636-bf78-dae7eab27983",
   "version": 1,
   "metadata": {
-    "timestamp": "2025-08-21T01:15:07Z",
+    "timestamp": "2025-10-23T22:16:02Z",
     "tools": {
       "components": [
         {
           "type": "application",
           "author": "anchore",
           "name": "syft",
-          "version": "1.31.0"
+          "version": "1.36.0"
         }
       ]
     },
@@ -360,12 +360,12 @@
       ]
     },
     {
-      "bom-ref": "pkg:github/lycheeverse/lychee-action@v1.8.0?package-id=a61baff28e436e3f",
+      "bom-ref": "pkg:github/lycheeverse/lychee-action@v2.0.2?package-id=7d9f51f8031c0baa",
       "type": "library",
       "name": "lycheeverse/lychee-action",
-      "version": "v1.8.0",
-      "cpe": "cpe:2.3:a:lycheeverse\\/lychee-action:lycheeverse\\/lychee-action:v1.8.0:*:*:*:*:*:*:*",
-      "purl": "pkg:github/lycheeverse/lychee-action@v1.8.0",
+      "version": "v2.0.2",
+      "cpe": "cpe:2.3:a:lycheeverse\\/lychee-action:lycheeverse\\/lychee-action:v2.0.2:*:*:*:*:*:*:*",
+      "purl": "pkg:github/lycheeverse/lychee-action@v2.0.2",
       "properties": [
         {
           "name": "syft:package:foundBy",
@@ -381,23 +381,23 @@
         },
         {
           "name": "syft:cpe23",
-          "value": "cpe:2.3:a:lycheeverse\\/lychee-action:lycheeverse\\/lychee_action:v1.8.0:*:*:*:*:*:*:*"
+          "value": "cpe:2.3:a:lycheeverse\\/lychee-action:lycheeverse\\/lychee_action:v2.0.2:*:*:*:*:*:*:*"
         },
         {
           "name": "syft:cpe23",
-          "value": "cpe:2.3:a:lycheeverse\\/lychee_action:lycheeverse\\/lychee-action:v1.8.0:*:*:*:*:*:*:*"
+          "value": "cpe:2.3:a:lycheeverse\\/lychee_action:lycheeverse\\/lychee-action:v2.0.2:*:*:*:*:*:*:*"
         },
         {
           "name": "syft:cpe23",
-          "value": "cpe:2.3:a:lycheeverse\\/lychee_action:lycheeverse\\/lychee_action:v1.8.0:*:*:*:*:*:*:*"
+          "value": "cpe:2.3:a:lycheeverse\\/lychee_action:lycheeverse\\/lychee_action:v2.0.2:*:*:*:*:*:*:*"
         },
         {
           "name": "syft:cpe23",
-          "value": "cpe:2.3:a:lycheeverse\\/lychee:lycheeverse\\/lychee-action:v1.8.0:*:*:*:*:*:*:*"
+          "value": "cpe:2.3:a:lycheeverse\\/lychee:lycheeverse\\/lychee-action:v2.0.2:*:*:*:*:*:*:*"
         },
         {
           "name": "syft:cpe23",
-          "value": "cpe:2.3:a:lycheeverse\\/lychee:lycheeverse\\/lychee_action:v1.8.0:*:*:*:*:*:*:*"
+          "value": "cpe:2.3:a:lycheeverse\\/lychee:lycheeverse\\/lychee_action:v2.0.2:*:*:*:*:*:*:*"
         },
         {
           "name": "syft:location:0:path",
@@ -412,11 +412,11 @@
       "hashes": [
         {
           "alg": "SHA-1",
-          "content": "088ea0f8641a4bbb2290651c70c142bd02afde3f"
+          "content": "9e687b2b8a18ed759c1206577e6276969902d11a"
         },
         {
           "alg": "SHA-256",
-          "content": "4f3f6e59eb4e319dbabd85bacd5b365d75d5f61719268c2331dcff0f369d2989"
+          "content": "feb0fbcd57847f762304fd502202d8871877e21c807a3c31fb467bbf95ad9482"
         }
       ]
     },
